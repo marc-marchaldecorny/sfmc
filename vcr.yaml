@@ -1,0 +1,24 @@
+project:
+  name: test-sfmc
+instance:
+  name: dev
+  runtime: nodejs16
+  region: aws.use1
+  application-id: 96d5d6b1-ff5e-40f0-9fdd-c68ab43f0e5b
+  configurations:
+    section1:
+      key1: this is an example
+    section2:
+      key2: 42
+  capabilities:
+    - messaging
+    - voice
+  entrypoint:
+    - node
+    - index.js
+debug:
+  name: debug
+  entrypoint:
+    - nodemon
+    - --inspect
+    - index.js
