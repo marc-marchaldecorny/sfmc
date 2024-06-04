@@ -1,0 +1,49 @@
+name: Deploy to NeRu
+
+on:
+  push:
+    branches: [bs-all]
+  pull_request:
+    branches: [bs-all]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.13.x
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Install NeRu CLI
+        run: |
+          curl -O https://api-eu.vonage.com/v1/neru/i/neru-59e69cd7-neru-cli-install-dist/neru-cli_linux_amd64/neru
+          chmod +x ./neru 
+          mv ./neru /usr/local/bin
+
+      - name: Create neru-cli config
+        uses: "DamianReeves/write-file-action@master"
+        with:
+          path: /home/runner/.neru-cli
+          write-mode: overwrite
+          contents: |
+            graphql_endpoint = https://api-us.vonage.com/v1/neru/api/graphql/v1/graphql
+            default_region   = ${{ secrets.REGION }}
+
+            [credentials]
+            api_key    = ${{secrets.API_KEY}}
+            api_secret = ${{secrets.API_SECRET}}
+
+      - name: Generate NeRu keys
+        run: neru app generate-keys --app-id ${{ secrets.APP_ID }}
+
+      - name: Deploy NeRu Production
+        run: neru deploy --filename neru.yml --project-name ${{ secrets.PROJECT_NAME }} --runtime nodejs16 --api-key ${{ secrets.API_KEY }} --api-secret ${{ secrets.API_SECRET }} --region ${{ secrets.REGION }}

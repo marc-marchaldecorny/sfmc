@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <title>Vonage SMS activity</title>
+  </head>
+  <!-- BS: Center -->
+  <body class="custom-activity d-flex justify-content-center">
+    <!-- START STEP - BS Margin Top, Padding and Card. Color: bg-light text-white-->
+    <div
+      id="step1"
+      class="step container mt-4 card text-bg-light shadow p-3 mb-5 bg-body-tertiary rounded"
+    >
+      <!-- ROW LOGO -->
+      <div class="row">
+        <!-- COLUMN -->
+        <div class="col">
+          <div class="p-3">
+            <img src="images/logo.png" alt="Vonage" />
+          </div>
+        </div>
+        <div class="col-9">
+          <div id="data-extension-warning" class="text-danger">
+            <p class="font-weight-bold">
+              Data extension not detected. Please configure the data extension
+              before configuring activity.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- ROW OUTER BODY -->
+      <div class="row">
+        <!-- COLUMN LEFT: 9 -->
+        <div class="col-9">
+          <!-- CARD MESSAGE -->
+          <div class="p-3 mb-2 card">
+            <!-- ROW 1: SENDERID & RECIPIENT TO -->
+            <div class="row">
+              <div class="col">
+                <form class="input-group mb-2 was-validated">
+                  <span class="input-group-text">Sender ID (From)</span>
+                  <textarea
+                    class="form-control"
+                    aria-label="Sender ID"
+                    id="senderID"
+                    name="senderID"
+                    value=""
+                    rows="1"
+                    required
+                  ></textarea>
+                  <div class="invalid-feedback">
+                    Please enter Sender ID (from).
+                  </div>
+                </form>
+              </div>
+              <div class="col">
+                <form class="input-group mb-3 was-validated">
+                  <span class="input-group-text">Recipient (To)</span>
+                  <select
+                    class="form-select"
+                    class="form-control"
+                    id="phone-parameter"
+                    aria-label="phone-parameter"
+                    value=""
+                    required
+                  ></select>
+                  <div class="invalid-feedback">
+                    Please select Recipient Phone (to).
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- ROW 2: MESSAGE TYPE: SMS, WA -->
+            <div class="row">
+              <div class="col">
+                <form class="input-group mb-3">
+                  <span class="input-group-text">Channel:</span>
+                  <select
+                    class="form-select"
+                    class="form-control"
+                    id="channel-types"
+                    aria-label="channel-types"
+                    required
+                    onchange="setChannelType(this)"
+                  >
+                    <option value="wa" selected>WhatsApp</option>
+                    <option value="sms">SMS</option>
+                    <option value="mms">MMS</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+            <!-- TYPE WA -->
+            <div class="row" id="wa">
+              <div class="col-12">
+                <!-- TEMPLATE NAME -->
+                <div class="row">
+                  <div class="col">
+                    <form class="input-group mb-3">
+                      <span class="input-group-text">Name:</span>
+                      <select
+                        class="form-select"
+                        class="form-control"
+                        id="template-list"
+                        aria-label="template-list"
+                        required
+                        onchange="setTemplateFields(this)"
+                      ></select>
+                    </form>
+                  </div>
+                </div>
+                <!-- TEMPLATE LANGUAGE -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="box text">
+                      <form class="input-group mb-3">
+                        <span class="input-group-text">Language:</span>
+                        <input
+                          class="form-control"
+                          aria-label="template-language"
+                          id="template-language"
+                          name="template-language"
+                          value=""
+                          rows="1"
+                          disabled
+                        />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!-- TEMPLATE TEXT -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="box text">
+                      <form class="input-group mb-3">
+                        <span class="input-group-text">Text:</span>
+                        <input
+                          class="form-control"
+                          aria-label="template-text"
+                          id="template-text"
+                          name="template-text"
+                          value=""
+                          rows="1"
+                          disabled
+                        />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!-- TEMPLATE SAMPLE -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="box text">
+                      <form class="input-group mb-3">
+                        <span class="input-group-text">Sample:</span>
+                        <input
+                          class="form-control"
+                          aria-label="template-sample"
+                          id="template-sample"
+                          name="template-sample"
+                          value=""
+                          rows="1"
+                          disabled
+                        />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!-- TEMPLATE PLACEHOLDERS -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="box text">
+                      <form class="input-group mb-3 was-validated">
+                        <span class="input-group-text">Placeholders:</span>
+                        <input
+                          class="form-control"
+                          aria-label="template-placeholders"
+                          id="template-placeholders"
+                          name="template-placeholders"
+                          value=""
+                          rows="1"
+                          placeholder="e.g. {Name}"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Please enter Placeholders relative to Data Extension
+                          fields. e.g. {FistName} {LastName}.
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- TYPE SMS -->
+            <div class="row" id="sms">
+              <div class="col-12">
+                <form class="input-group mb-3 was-validated">
+                  <span class="input-group-text">Text Body</span>
+                  <textarea
+                    class="form-control"
+                    aria-label="textMessage"
+                    id="textMessage"
+                    name="textMessage"
+                    value=""
+                    required
+                    rows="4"
+                  ></textarea>
+                  <div class="invalid-feedback">
+                    Please enter text to the message.
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- TYPE MMS -->
+            <div class="row" id="mms">
+              <div class="col-12">
+                <form class="input-group mb-3 was-validated">
+                  <span class="input-group-text">Image URL</span>
+                  <textarea
+                    class="form-control"
+                    aria-label="Image URL"
+                    id="imageUrl"
+                    name="imageUrl"
+                    value=""
+                    required
+                    rows="2"
+                  ></textarea>
+                  <div class="invalid-feedback">
+                    Please enter a URL to the image.
+                  </div>
+                </form>
+                <form class="input-group mb-3 was-validated">
+                  <span class="input-group-text">Image Caption</span>
+                  <textarea
+                    class="form-control"
+                    aria-label="Image Caption"
+                    id="imageCaption"
+                    name="imageCaption"
+                    value=""
+                    required
+                    rows="1"
+                  ></textarea>
+                  <div class="invalid-feedback">
+                    Please enter a Caption to the image.
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- CARD HANDLE INBOUND MESSAGES -->
+          <div class="p-3 mb-2 card">
+            <div class="row" onchange="selectedAi()" id="inboundAi">
+              <p class="font-weight-bold">Choose Inbound Message Handler:</p>
+              <div class="col">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="inboundRadio"
+                    id="noAi"
+                    value="noAi"
+                    checked
+                  />
+                  <label class="form-check-label" for="noAi"> None </label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="inboundRadio"
+                    id="vonageAi"
+                    value="vonageAi"
+                  />
+                  <label class="form-check-label" for="vonageAi">
+                    Vonage AI
+                  </label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="inboundRadio"
+                    id="jumperAi"
+                    value="jumperAi"
+                  />
+                  <label class="form-check-label" for="jumperAi">
+                    Jumper AI
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- COLUMN RIGHT-->
+        <div class="col">
+          <div class="p-3 mb-2 card">
+            <!-- DE FIELDS -->
+            <div class="placeholder-list">
+              <div class="card-header">Data Extension Fields</div>
+              <ul class="list-group list-group-flush">
+                <li id="placeholder-list" class="list-group-item"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END ROW 2 -->
+      <div id="template-name"></div>
+      <div class="card-footer mt-2">
+        Please fill all the required input fields. Then click Done.
+      </div>
+    </div>
+    <!-- END STEP END CARD-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        var dependencies = ["customActivity"];
+        require(dependencies);
+      })();
+    </script>
+    <script type="text/javascript">
+      let channel = "whatsapp";
+      console.log("channel:", channel);
+
+      $(document).ready(function () {
+        // BY DEFAULT ONLY SHOW SELECTED
+        $("#sms").hide();
+        $("#mms").hide();
+        // SHOW CHANNEL TYPE DIV INFO
+        $("#channel-types").on("change", function () {
+          if (this.value == "wa") {
+            $("#wa").show();
+            $("#sms").hide();
+            $("#mms").hide();
+          } else if (this.value == "sms") {
+            $("#sms").show();
+            $("#mms").hide();
+            $("#wa").hide();
+          } else if (this.value == "mms") {
+            $("#mms").show();
+            $("#sms").hide();
+            $("#wa").hide();
+          } else {
+            console.log("Other value:", this.value);
+          }
+        });
+      });
+
+      // GET VALUE OF DROPDOWN FOR MESSAGE TYPE: SMS, MMS, WA
+      function setChannelType(option) {
+        console.log("setChannelType", option.value);
+      }
+
+      // DEFAULT AI
+      let selectAi = "noAi";
+      let inboundAi = (document.getElementById("inboundAi").value = selectAi);
+      console.log("inboundAi:", inboundAi);
+      // GET VALUE OF RADIO FOR SELECTED AI
+      function selectedAi() {
+        selectAi = document.querySelector(
+          'input[name="inboundRadio"]:checked'
+        ).value;
+        inboundAi = selectAi;
+        console.log("inboundAi:", inboundAi);
+      }
+    </script>
+    <script type="text/javascript">
+      var templateList;
+      let templateName = document.getElementById("template-name");
+      let templateText = document.getElementById("template-text");
+      let templateLanguage = document.getElementById("template-language");
+      let templateSample = document.getElementById("template-sample");
+      let optionValue;
+      let optionObj;
+
+      // REQUEST TO BACKEND THAT GETS APPROVED TEMPLATE LIST
+      // (async () => {
+      //   // NEED TO UPDATE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+      //   let WABA_ID = '1067598977328429';
+      //   let apiKey = '5c57b234';
+      //   let apiSecret = 'IoniHGUtCff1V3Gb';
+      //   var token = `${apiKey}:${apiSecret}`;
+      //   let body = { wabaID: WABA_ID, token: token };
+      //   let requestOptions = {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify(body),
+      //   };
+      //   fetch('/getWATemplateList', requestOptions)
+      //     .then((response) => response.json())
+      //     .then((result) => {
+      //       console.log('Success:', result);
+      //       templateList = result;
+      //       templateName.value = result.templates[0].name;
+      //       templateLanguage.value = result.templates[0].language;
+      //       templateText.value = result.templates[0].components[0].text;
+
+      //       // SET OPTIONS IN SELECT DROPDOWN
+      //       let optionList = document.getElementById('template-list').options;
+      //       result.templates.forEach((obj) => {
+      //         // UPDATE SET SELECT OPTIONS
+      //         optionList.add(new Option(obj.name, obj.value));
+      //       });
+      //     })
+      //     .catch((error) => console.log('Error:', error));
+      // })();
+
+      // UPDATE TEMPLATE FIELDS
+      function setTemplateFields(option) {
+        // console.log('onchange:', templateList);
+        // console.log('selected:', option.value);
+        templateSample.value = "";
+        templateList.templates.forEach((obj) => {
+          if (obj.name === option.value) {
+            // console.log('matched:', obj.name);
+            templateName.value = obj.name;
+            templateLanguage.value = obj.language;
+
+            if (obj.components[0].text) {
+              templateText.value = obj.components[0].text;
+            } else {
+              templateText.value = "";
+            }
+
+            if (obj.components[0].example) {
+              templateSample.value = obj.components[0].example.body_text;
+            } else {
+              templateSample.value = "";
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

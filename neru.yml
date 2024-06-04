@@ -1,0 +1,41 @@
+project:
+  name: sfmc
+instance:
+  name: bs-all
+  runtime: nodejs16
+  region: aws.apse1
+  application-id: 28c13487-1468-41a2-b2b5-429cf226d5b2
+  environment:
+    - name: VONAGE_NUMBER
+      value: "12015542422"
+      secret: ""
+    - name: WHATSAPP_NUMBER
+      value: "12015542422"
+      secret: ""
+    - name: WHATSAPP_ID
+      value: "432448094105434"
+      secret: ""
+    - name: TO_NUMBER
+      value: "15754947093"
+      secret: ""
+    - name: MMS_FROM_NUMBER
+      value: "12015542422"
+      secret: ""
+    - name: SMS_FROM_NUMBER
+      value: "12015542422"
+      secret: ""
+    - name: TOKEN
+      value: ""
+      secret: ""
+  capabilities:
+    - messaging
+    - voice
+  entrypoint:
+    - node
+    - index.js
+debug:
+  name: debug
+  entrypoint:
+    - nodemon
+    - --inspect
+    - index.js

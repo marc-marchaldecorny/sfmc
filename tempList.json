@@ -1,0 +1,235 @@
+{
+    "errorMessage": "",
+    "prev": null,
+    "data": [
+      {
+        "category": "MARKETING",
+        "template_name": "sfdcdemo4",
+        "templates": [
+          {
+            "category": "MARKETING",
+            "status": "APPROVED",
+            "product": null,
+            "language": "en",
+            "template_name": "sfdcdemo4",
+            "messageinfo": {
+              "wa_template_name": "sfdcdemo4",
+              "replace_params_key": [
+                {
+                  "<custom_field_Name>": "text"
+                }
+              ],
+              "wa_id": "226903269728345"
+            },
+            "template_id": "226903269728345",
+            "collection_id": "4586939248017408",
+            "id": "6716250474151936"
+          }
+        ]
+      },
+      {
+        "category": "MARKETING",
+        "template_name": "preview_template",
+        "templates": [
+          {
+            "category": "MARKETING",
+            "status": "APPROVED",
+            "product": null,
+            "language": "en",
+            "template_name": "preview_template",
+            "messageinfo": {
+              "wa_template_name": "preview_template",
+              "replace_params_key": [],
+              "wa_id": "546450777451822"
+            },
+            "template_id": "546450777451822",
+            "collection_id": "4861596800909312",
+            "id": "5544248700829696"
+          }
+        ]
+      },
+      {
+        "category": "MARKETING",
+        "template_name": "linkpreview",
+        "templates": [
+          {
+            "category": "MARKETING",
+            "status": "APPROVED",
+            "product": null,
+            "language": "en",
+            "template_name": "linkpreview",
+            "messageinfo": {
+              "wa_template_name": "linkpreview",
+              "replace_params_key": [],
+              "wa_id": "886547219128834"
+            },
+            "template_id": "886547219128834",
+            "collection_id": "4915316238581760",
+            "id": "5468296885043200"
+          }
+        ]
+      },
+      {
+        "category": "TRANSACTIONAL",
+        "template_name": "pre_production_1",
+        "templates": [
+          {
+            "category": "TRANSACTIONAL",
+            "status": "APPROVED",
+            "product": null,
+            "language": "en",
+            "template_name": "pre_production_1",
+            "messageinfo": {
+              "wa_template_name": "pre_production_1",
+              "replace_params_key": [],
+              "wa_id": "8528482943890762"
+            },
+            "template_id": "8528482943890762",
+            "collection_id": "5190144933756928",
+            "id": "6188287045402624"
+          }
+        ]
+      },
+      {
+        "category": "MARKETING",
+        "template_name": "pdftesting",
+        "templates": [
+          {
+            "category": "MARKETING",
+            "status": "APPROVED",
+            "product": null,
+            "language": "en",
+            "template_name": "pdftesting",
+            "messageinfo": {
+              "wa_template_name": "pdftesting",
+              "replace_params_key": [],
+              "wa_id": "715784366998845"
+            },
+            "template_id": "715784366998845",
+            "collection_id": "5215019345903616",
+            "id": "5400968222736384"
+          }
+        ]
+      },
+      {
+        "category": "MARKETING",
+        "template_name": "sfmcdemo2",
+        "templates": [
+          {
+            "category": "MARKETING",
+            "status": "APPROVED",
+            "product": null,
+            "language": "en",
+            "template_name": "sfmcdemo2",
+            "messageinfo": {
+              "wa_template_name": "sfmcdemo2",
+              "replace_params_key": [
+                {
+                  "<custom_field_Name>": "text"
+                }
+              ],
+              "wa_id": "3453414194940573"
+            },
+            "template_id": "3453414194940573",
+            "collection_id": "5511646021419008",
+            "id": "5850632824815616"
+          }
+        ]
+      },
+      {
+        "category": "MARKETING",
+        "template_name": "marketing",
+        "templates": [
+          {
+            "category": "MARKETING",
+            "status": "APPROVED",
+            "product": null,
+            "language": "en",
+            "template_name": "marketing",
+            "messageinfo": {
+              "wa_template_name": "marketing",
+              "replace_params_key": [],
+              "wa_id": "1290212858485995"
+            },
+            "template_id": "1290212858485995",
+            "collection_id": "5572709004869632",
+            "id": "4858578819874816"
+          }
+        ]
+      },
+      {
+        "category": "MARKETING",
+        "template_name": "pdffilename",
+        "templates": [
+          {
+            "category": "MARKETING",
+            "status": "APPROVED",
+            "product": null,
+            "language": "en",
+            "template_name": "pdffilename",
+            "messageinfo": {
+              "wa_template_name": "pdffilename",
+              "replace_params_key": [],
+              "wa_id": "5992341884186692"
+            },
+            "template_id": "5992341884186692",
+            "collection_id": "5841102365786112",
+            "id": "5557308945596416"
+          }
+        ]
+      },
+      {
+        "category": "MARKETING",
+        "template_name": "testtemplate",
+        "templates": [
+          {
+            "category": "MARKETING",
+            "status": "APPROVED",
+            "product": null,
+            "language": "en",
+            "template_name": "testtemplate",
+            "messageinfo": {
+              "wa_template_name": "testtemplate",
+              "replace_params_key": [],
+              "wa_id": "605672778084145"
+            },
+            "template_id": "605672778084145",
+            "collection_id": "5945358001373184",
+            "id": "4533944518967296"
+          }
+        ]
+      },
+      {
+        "category": "MARKETING",
+        "template_name": "newaccounttest",
+        "templates": []
+      },
+      {
+        "category": "TRANSACTIONAL",
+        "template_name": "sfmcdemo3bot",
+        "templates": [
+          {
+            "category": "TRANSACTIONAL",
+            "status": "APPROVED",
+            "product": null,
+            "language": "en",
+            "template_name": "sfmcdemo3bot",
+            "messageinfo": {
+              "wa_template_name": "sfmcdemo3bot",
+              "replace_params_key": [
+                {
+                  "<custom_field_Name>": "text"
+                }
+              ],
+              "wa_id": "1253005938946123"
+            },
+            "template_id": "1253005938946123",
+            "collection_id": "6541735198720000",
+            "id": "5687849797812224"
+          }
+        ]
+      }
+    ],
+    "success": true,
+    "next": null
+  }

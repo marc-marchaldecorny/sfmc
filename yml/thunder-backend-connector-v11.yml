@@ -1,0 +1,23 @@
+project:
+  name: backend-connector-v11
+instance:
+  name: mms-one
+  runtime: nodejs16
+  region: aws.euw1
+  application-id: 3e7cf45c-bfad-44f5-8093-136a4cd44428
+  environment:
+    - name: VONAGE_NUMBER
+      value: '12015911011'
+      secret: ''
+  capabilities:
+    - messaging
+    - voice
+  entrypoint:
+    - node
+    - index.js
+debug:
+  name: debug
+  entrypoint:
+    - nodemon
+    - --inspect
+    - index.js
