@@ -1,0 +1,38 @@
+project:
+  name: sfmc
+instance:
+  name: bs-wa-jumper
+  runtime: nodejs16
+  region: aws.apse1
+  application-id: c9138c6d-13b1-4f4e-bbc5-79ad3d5a4b8b
+  environment:
+    - name: VONAGE_NUMBER
+      value: ""
+      secret: ""
+    - name: WHATSAPP_NUMBER
+      value: "12015598009"
+      secret: ""
+    - name: WHATSAPP_ID
+      value: "1067598977328429"
+      secret: ""
+    - name: TO_NUMBER
+      value: "15754947093"
+      secret: ""
+    - name: MMS_FROM_NUMBER
+      value: ""
+      secret: ""
+    - name: TOKEN
+      value: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJsR3h4M2lRMGJTR2RiemZZTTBCNTFUczAyRUR5IiwiYXVkIjoiUVdGNEt3MXFkR3NLcXhaV1AzR3o5akhaMTVXS0dmY29vR1B5Q3N6dzd1bEVjemNaIiwiaXNzIjoidXJuOlwvXC9hcGlnZWUtZWRnZS1KV1QtcG9saWN5LXRlc3QiLCJtZXJjaGFudF9pZCI6IjUzNTY5MDE3OTc0NjIwMTYiLCJleHAiOjE2ODYwMjU4MDksImlhdCI6MTY3ODI0OTgwOSwianRpIjoiNmQ4ZGFmYjAtN2U0Ni00Y2IwLTk3ZWMtNmNmZTRjYmI5MjMzIn0.mIVuucAh5aGMtqxgeThP3cgCEmfl9_9xy6HjO7qYkYxMiAUaBUqTmC-m__VPE6Qvr8DFHjzfpfYOYF1T2W_6ModY6sS8-_ShmRiM-ASOXlQ_xDk5lfQibPDRxkaviRtL1r2PrKS_VvThoSjGdv3naPRP-Xzlct8e-AT-jN_m2N_Ix6ISw1xkxGE5YEReWW6QxUiL3kbHJh0AVqVttUKdppwasZZmYjSRJ2QilyPka6ZoXWqyr_GJrgkVRlilgwX5zGTNuRAfNv6MXcnSZK1EmIhSt3XtznnAHlJJQ3EqHeDN7ESLSkmF-8ohx5jO8v8vQLnRlkwYODGV_kNw0Vxb9w"
+      secret: ""
+  capabilities:
+    - messaging
+    - voice
+  entrypoint:
+    - node
+    - index.js
+debug:
+  name: debug
+  entrypoint:
+    - nodemon
+    - --inspect
+    - index.js

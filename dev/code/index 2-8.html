@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+
+    <!-- GET TEMPLATE LISTING RESULT -->
+    <script id="myJson" type="application/json">
+      {
+        "paging": {
+          "cursors": {
+            "before": "MAZDZD",
+            "after": "MjQZD"
+          },
+          "next": "https://api.nexmo.com/v2/whatsapp-manager/wabas/432448094105434/templates?status=APPROVED&limit=25&after=MjQZD"
+        },
+        "templates": [
+          {
+            "name": "demo_nourhan",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Hi {{1}} ,welcome to Vonage. How can I help you today?",
+                "example": {
+                  "body_text": [["John"]]
+                }
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "757022352019006"
+          },
+          {
+            "name": "nourhan_demo",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Hi {{1}} , welcome to Vonage. How can I help you today?",
+                "example": {
+                  "body_text": [["John"]]
+                }
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "716623559999655"
+          },
+          {
+            "name": "template_optin_english",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Hi {{1}} , welcome to Vonage",
+                "example": {
+                  "body_text": [["John"]]
+                }
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Agree"
+                  },
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Disagree"
+                  }
+                ]
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "707008187578229"
+          },
+          {
+            "name": "template_optin_arabic2",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "{{1}}هلا \nمرحبا بك في Vonage",
+                "example": {
+                  "body_text": [["John"]]
+                }
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "موافق"
+                  },
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "غير موافق"
+                  }
+                ]
+              }
+            ],
+            "language": "ar",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "1253171178883632"
+          },
+          {
+            "name": "template_optin",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "{{1}} هلامرحبا بكم في vonage",
+                "example": {
+                  "body_text": [["John"]]
+                }
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "موافق"
+                  },
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "غير موافق"
+                  }
+                ]
+              }
+            ],
+            "language": "ar",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "914777889697205"
+          },
+          {
+            "name": "conad_volantino",
+            "components": [
+              {
+                "type": "HEADER",
+                "format": "DOCUMENT",
+                "example": {
+                  "header_handle": [
+                    "https://scontent.whatsapp.net/v/t61.29466-34/297608923_699413808558262_8936041381437442473_n.pdf?ccb=1-7&_nc_sid=57045b&_nc_ohc=FI01Gh8saO4AX8M3Tfj&_nc_oc=AQkjKRmotid9uq6vPOpfYndyQ2afSViAj_NOlBZVC3ay8PnBhTHxHPfPFOKK0p4NtQ8&_nc_ht=scontent.whatsapp.net&edm=AH51TzQEAAAA&oh=01_AdRHIkCnajsb3B1WjIUm6y948m5smRt_W41zi8PNeAOhMw&oe=640B9C99"
+                  ]
+                }
+              },
+              {
+                "type": "BODY",
+                "text": "Ciao {{1}}\nEcco il volantino per il tuo supermercato Conad {{2}}.\nInvia un messaggio per scoprire di più.",
+                "example": {
+                  "body_text": [
+                    ["Marc", "Penne - Circonvallazione Aldo Moro Snc"]
+                  ]
+                }
+              },
+              {
+                "type": "FOOTER",
+                "text": "Non ti interessa? Tocca Interrompi promozioni"
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Scopri di più"
+                  },
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Interrompi promozioni"
+                  }
+                ]
+              }
+            ],
+            "language": "it",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "699413805224929"
+          },
+          {
+            "name": "sabb_demo_account_balance",
+            "components": [
+              {
+                "type": "HEADER",
+                "format": "DOCUMENT",
+                "example": {
+                  "header_handle": [
+                    "https://scontent.whatsapp.net/v/t61.29466-34/316455416_633844882076331_4016558134665365355_n.pdf?ccb=1-7&_nc_sid=57045b&_nc_ohc=J7KOUCrgSs4AX_ZyJ24&_nc_ht=scontent.whatsapp.net&edm=AH51TzQEAAAA&oh=01_AdRYEys4NFFeDlzPMVOnaUA2Cf-EYB2Kywou8JeznEtriA&oe=640B87E0"
+                  ]
+                }
+              },
+              {
+                "type": "BODY",
+                "text": "عزيزي {{1}} ، الرجاء البحث عن فاتورة بطاقتك الائتمانية الشهرية.",
+                "example": {
+                  "body_text": [["نورهان"]]
+                }
+              }
+            ],
+            "language": "ar",
+            "status": "APPROVED",
+            "category": "TRANSACTIONAL",
+            "id": "633844878742998"
+          },
+          {
+            "name": "sabb_demo_account_balance",
+            "components": [
+              {
+                "type": "HEADER",
+                "format": "DOCUMENT",
+                "example": {
+                  "header_handle": [
+                    "https://scontent.whatsapp.net/v/t61.29466-34/310524448_1396357787802247_7057091695816575566_n.pdf?ccb=1-7&_nc_sid=57045b&_nc_ohc=48INqFDUaQkAX_n97LT&_nc_ht=scontent.whatsapp.net&edm=AH51TzQEAAAA&oh=01_AdQIHVukWA0b603aVVpGiAmaHm7YXlAbi7hI2b1n9CS3Cg&oe=640BB375"
+                  ]
+                }
+              },
+              {
+                "type": "BODY",
+                "text": "Dear {{1}}, please find your monthly credit card bill.",
+                "example": {
+                  "body_text": [["Nourhan"]]
+                }
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "TRANSACTIONAL",
+            "id": "1396357784468914"
+          },
+          {
+            "name": "sabb_demo_options",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "😃 عزيزي *{{1}}* ، أهلاً بك في مساعد *ساب* الرقمي.\nكيف استطيع مساعدتك اليوم؟"
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "تحقق من الرصيد"
+                  },
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "حظر بطاقة الائتمان"
+                  },
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "أسعار صرف العملات"
+                  }
+                ]
+              }
+            ],
+            "language": "ar",
+            "status": "APPROVED",
+            "category": "TRANSACTIONAL",
+            "id": "3282424605405395"
+          },
+          {
+            "name": "sabb_demo_options",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Hello *{{1}}*, welcome to *SABB's* digital assistant over WhatsApp 😃\nHow can I help you today?"
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Check Balance"
+                  },
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Block credit card"
+                  },
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Foreign exchange rates"
+                  }
+                ]
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "TRANSACTIONAL",
+            "id": "2452974468183760"
+          },
+          {
+            "name": "kitt_vcr_wa_one",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Hi {{1}}, how are you?",
+                "example": {
+                  "body_text": [["Name"]]
+                }
+              }
+            ],
+            "language": "en_US",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "1302403030492784"
+          },
+          {
+            "name": "testjavi",
+            "components": [
+              {
+                "type": "HEADER",
+                "format": "TEXT",
+                "text": "Welcome to our account"
+              },
+              {
+                "type": "BODY",
+                "text": "Hi {{1}} this is a reminder that you need to activate your account"
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "PHONE_NUMBER",
+                    "text": "Call us",
+                    "phone_number": "+447730591083"
+                  }
+                ]
+              }
+            ],
+            "language": "en_GB",
+            "status": "APPROVED",
+            "category": "TRANSACTIONAL",
+            "id": "534891305084130"
+          },
+          {
+            "name": "testmarketing",
+            "components": [
+              {
+                "type": "HEADER",
+                "format": "TEXT",
+                "text": "Welcome to our company {{1}}"
+              },
+              {
+                "type": "BODY",
+                "text": "Hi, this is a notification    {{1}} message for you"
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Yes"
+                  },
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "No"
+                  }
+                ]
+              }
+            ],
+            "language": "en_GB",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "696128065312343"
+          },
+          {
+            "name": "nourhan_marketing",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Hi {{1}}, welcome to Vonage!"
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Click here"
+                  }
+                ]
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "666753171602575"
+          },
+          {
+            "name": "nourhan_cta2",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Hello {{1}}, welcome to Vonage!"
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Click here"
+                  }
+                ]
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "462702225935241"
+          },
+          {
+            "name": "nourhan_cta",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Hi,. testing button {{1}} thank you"
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "click here"
+                  }
+                ]
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "665697658236036"
+          },
+          {
+            "name": "kitt_basic_message_param_sample",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Season Greetings {{1}}, from Vonage and the Team!",
+                "example": {
+                  "body_text": [["Daisy"]]
+                }
+              }
+            ],
+            "language": "en_GB",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "460382952899694"
+          },
+          {
+            "name": "kitt_basic_message_param",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Season Greetings {{1}}, form Vonage and the Team!"
+              }
+            ],
+            "language": "en_GB",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "3272535096334566"
+          },
+          {
+            "name": "kitt_basic_message",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Season Greetings from Vonage and the Team!"
+              }
+            ],
+            "language": "en_GB",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "1374903716649047"
+          },
+          {
+            "name": "kphi_interactive",
+            "components": [
+              {
+                "type": "HEADER",
+                "format": "TEXT",
+                "text": "Header goes here"
+              },
+              {
+                "type": "BODY",
+                "text": "This is {{1}}, here is your account: {{2}} and pin: {{3}}. Please choose one below.",
+                "example": {
+                  "body_text": [["Vonage Verification", "12345", "54"]]
+                }
+              },
+              {
+                "type": "FOOTER",
+                "text": "Footer goes here"
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Yes"
+                  },
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "No"
+                  }
+                ]
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "444919974456254"
+          },
+          {
+            "name": "kphi_interactive_4",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Season Greetings from Vonage. Hello {{1}}, are you interested in a {{2}} promotion?",
+                "example": {
+                  "body_text": [["Kitt", "50%"]]
+                }
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Yes"
+                  },
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "No"
+                  }
+                ]
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "1129977041212224"
+          },
+          {
+            "name": "kphi_interactive_7",
+            "components": [
+              {
+                "type": "HEADER",
+                "format": "TEXT",
+                "text": "Header goes here"
+              },
+              {
+                "type": "BODY",
+                "text": "Hi there {{1}}, are you interested in a {{2}} promotion?"
+              },
+              {
+                "type": "FOOTER",
+                "text": "Footer goes here"
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Yes"
+                  },
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "No"
+                  }
+                ]
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "1082322829125750"
+          },
+          {
+            "name": "kphi_basic_1",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Welcome, this is a {{1}} with five digit pin: {{2}} and two digit pin: {{3}}.",
+                "example": {
+                  "body_text": [["Vonage Verificatin", "12345", "10"]]
+                }
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "530347185319152"
+          },
+          {
+            "name": "test_name_6",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Hello {{1}}, are you interested in a {{2}} promotion?",
+                "example": {
+                  "body_text": [["Bill", "50%"]]
+                }
+              }
+            ],
+            "language": "en_US",
+            "status": "APPROVED",
+            "category": "MARKETING",
+            "id": "530690261807415"
+          },
+          {
+            "name": "firstname_buttons_feedback_template",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Hello {{1}}, we hope you enjoyed yesterday's event! 🙂 Could you please take a minute to give some feedback?"
+              },
+              {
+                "type": "BUTTONS",
+                "buttons": [
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "Yes, sure!"
+                  },
+                  {
+                    "type": "QUICK_REPLY",
+                    "text": "No, thanks"
+                  }
+                ]
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "TRANSACTIONAL",
+            "id": "657208012478794"
+          },
+          {
+            "name": "firstname_feedback_template",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Hello {{1}}, we hope you enjoyed yesterday's event! 🙂"
+              }
+            ],
+            "language": "en_GB",
+            "status": "APPROVED",
+            "category": "TRANSACTIONAL",
+            "id": "661835425299344"
+          },
+          {
+            "name": "firstname_feedback_template",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Hello {{1}}, we hope you enjoyed yesterday's event! 😀"
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "TRANSACTIONAL",
+            "id": "485387930019209"
+          },
+          {
+            "name": "simple_feedback_template",
+            "components": [
+              {
+                "type": "BODY",
+                "text": "Hello, we hope you enjoyed yesterday's event! 🙂"
+              }
+            ],
+            "language": "en",
+            "status": "APPROVED",
+            "category": "TRANSACTIONAL",
+            "id": "838546444116055"
+          }
+        ]
+      }
+    </script>
+
+    <script type="text/javascript">
+      let templateName;
+      let templateText;
+      let templateLanguage;
+      let templateBodyText;
+      let optionValue;
+      $(function () {
+        var templateList = JSON.parse($('#myJson').html());
+
+        if (templateList.templates) {
+          // console.log(templateList.templates[0].name);
+          console.log(templateList.templates[0].language);
+          // console.log(templateList.templates[0].components[0].text);
+          // console.log(
+          //   templateList.templates[0].components[0].example.body_text[0]
+          // );
+          templateName = templateList.templates[0].name;
+          templateLanguage = templateList.templates[0].language;
+          templateText = templateList.templates[0].components[0].text;
+          templateBodyText =
+            templateList.templates[0].components[0].example.body_text[0];
+          // SET OPTIONS IN SELECT DROPDOWN
+          let optionList = document.getElementById('template-list').options;
+          let arrayList = templateList.templates;
+          arrayList.forEach((option) => {
+            // console.log(option.name);
+            optionList.add(new Option(option.name, option.value));
+          });
+        }
+      });
+
+      function setTemplateInfo() {
+        optionValue = document.getElementById('template-list');
+        // console.log('VALUE:', optionValue.value);
+        document.getElementById('template-name').value = templateName;
+        document.getElementById('template-language').value = templateLanguage;
+        document.getElementById('template-text').value = templateText;
+        document.getElementById('template-sample').value = templateBodyText;
+      }
+    </script>
+
+    <title>Vonage WA activity</title>
+  </head>
+  <!-- BS: Center -->
+  <body class="custom-activity d-flex justify-content-center">
+    <!-- START STEP - BS Margin Top, Padding and Card. Color: bg-light text-white-->
+    <div
+      id="step1"
+      class="step container mt-4 card text-bg-light shadow p-3 mb-5 bg-body-tertiary rounded"
+    >
+      <!-- ROW 1: LOGO -->
+      <div class="row">
+        <!-- COLUMN -->
+        <div class="col">
+          <div class="p-3">
+            <img src="images/logo.png" alt="Vonage" />
+          </div>
+        </div>
+        <div class="col-10">
+          <div id="data-extension-warning" class="text-center">
+            <span
+              >Data extension not detected. Please configure the data extension
+              before configuring activity.</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- ROW 1: END -->
+      <!-- ROW 2: BODY -->
+      <div class="row">
+        <!-- COLUMN LEFT: 9 -->
+        <div class="col-9">
+          <div class="p-3 mb-1 card">
+            <!-- WABAID -->
+            <div class="row">
+              <div class="col-9">
+                <div class="box text">
+                  <form class="input-group mb-3 was-validated">
+                    <span class="input-group-text">WhatsApp Business ID:</span>
+                    <input
+                      class="form-control"
+                      aria-label="wabaId"
+                      id="wabaId"
+                      name="wabaId"
+                      value=""
+                      rows="1"
+                      required
+                    />
+                    <div class="invalid-feedback">Please enter WABA ID.</div>
+                  </form>
+                </div>
+              </div>
+              <div class="col">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="onClickGetTemplateList()"
+                >
+                  Get Template List
+                </button>
+              </div>
+            </div>
+            <!-- MESSAGE TYPE DROPDOWN -->
+            <div class="row">
+              <div class="col">
+                <form class="input-group mb-3">
+                  <span class="input-group-text">WhatsApp Template:</span>
+                  <select
+                    class="form-select"
+                    class="form-control"
+                    id="template-list"
+                    aria-label="template-list"
+                    required
+                    onchange="setTemplateInfo()"
+                  ></select>
+                </form>
+              </div>
+            </div>
+            <!-- TEMPLATE NAME -->
+            <div class="row">
+              <div class="col-12">
+                <div class="box text">
+                  <form class="input-group mb-3">
+                    <span class="input-group-text">Name:</span>
+                    <input
+                      class="form-control"
+                      aria-label="template-name"
+                      id="template-name"
+                      name="template-name"
+                      value=""
+                      rows="1"
+                      disabled
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- TEMPLATE LANGUAGE -->
+            <div class="row">
+              <div class="col-12">
+                <div class="box text">
+                  <form class="input-group mb-3">
+                    <span class="input-group-text">Language:</span>
+                    <input
+                      class="form-control"
+                      aria-label="template-language"
+                      id="template-language"
+                      name="template-language"
+                      value=""
+                      rows="1"
+                      disabled
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- TEMPLATE TEXT -->
+            <div class="row">
+              <div class="col-12">
+                <div class="box text">
+                  <form class="input-group mb-3">
+                    <span class="input-group-text">Text:</span>
+                    <input
+                      class="form-control"
+                      aria-label="template-text"
+                      id="template-text"
+                      name="template-text"
+                      value=""
+                      rows="1"
+                      disabled
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- TEMPLATE SAMPLE -->
+            <div class="row">
+              <div class="col-12">
+                <div class="box text">
+                  <form class="input-group mb-3">
+                    <span class="input-group-text">Sample:</span>
+                    <input
+                      class="form-control"
+                      aria-label="template-sample"
+                      id="template-sample"
+                      name="template-sample"
+                      value=""
+                      rows="1"
+                      disabled
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- TEMPLATE PLACEHOLDERS -->
+            <div class="row">
+              <div class="col-12">
+                <div class="box text">
+                  <form class="input-group mb-3">
+                    <span class="input-group-text">Placeholders:</span>
+                    <input
+                      class="form-control"
+                      aria-label="template-placeholders"
+                      id="template-placeholders"
+                      name="template-placeholders"
+                      value=""
+                      rows="1"
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- COLUMN RIGHT-->
+        <div class="col">
+          <div class="p-3 mb-2 card">
+            <!-- DE FIELDS -->
+            <div class="placeholder-list">
+              <div class="card-header">Data Extension Fields</div>
+              <ul class="list-group list-group-flush">
+                <li id="placeholder-list" class="list-group-item"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END ROW 2 -->
+      <div class="card-footer mt-2">
+        Please fill all the required input fields. Then click Done.
+      </div>
+    </div>
+    <!-- END STEP END CARD-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        var dependencies = ['customActivity'];
+        require(dependencies);
+      })();
+    </script>
+
+    <script type="text/javascript">
+      const onClickGetTemplateList = async () => {
+        let wabaId = document.getElementById('wabaId').value;
+        await getTemplateList(wabaId);
+      };
+      const getTemplateList = async (wabaId) => {
+        // console.log('wabaId:', wabaId);
+        let WABA_ID = '432448094105434';
+        let apiKey = '4f2ff535';
+        let apiSecret = 'jtYzPbh3MXr8M1Hr';
+        var token = `${apiKey}:${apiSecret}`;
+        let body = { wabaID: WABA_ID, token: token };
+        let requestOptions = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(body),
+        };
+        fetch('/getWATemplateList', requestOptions)
+          .then((response) => response.json())
+          .then((result) => console.log('Success:', result))
+          .catch((error) => console.log('Error:', error));
+      };
+    </script>
+  </body>
+</html>

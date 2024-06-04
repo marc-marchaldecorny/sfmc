@@ -1,0 +1,50 @@
+
+https://neru-5c57b234-sfmc-bs-wa-jumper.apse1.serverless.vonage.com
+
+
+
+apiKey: 5c57b234
+apiSecret: IoniHGUtCff1V3Gb
+AWS - Asia Pacific - aws.apse1
+✅ application successfully created - application_name="sfmc" application_id="c9138c6d-13b1-4f4e-bbc5-79ad3d5a4b8b"
+WhatsAppNumber: 12015598009
+WhatsAppID: 1067598977328429
+
+SMS Settings: Messages API
+MessagesInboundURL: https://jumper.ai/whatsapp/incoming/4966103653285888
+MessagesStatusURL: https://jumper.ai/whatsapp/incoming/4966103653285888
+Version: V1
+
+# INSTRUCTIONS
+Update neru.yml first
+neru version
+neru configure
+- select Asia Pacific
+neru init
+- Select Vonage
+
+update index.html
+
+neru deploy
+
+ ❌  deployment aborted: failed to deploy: error from deployment-api: credential not found: trace_id = c74d5648-25fe-4d85-a43b-e159891b8182
+
+neru app create --name sfmc 
+✅ application successfully created - application_name="sfmc" application_id="c9138c6d-13b1-4f4e-bbc5-79ad3d5a4b8b"
+
+neru app configure --voice=true --messages=true --rtc=false --app-id=c9138c6d-13b1-4f4e-bbc5-79ad3d5a4b8b
+
+neru init
+
+neru deploy
+✅ instance has been deployed!
+instance_id: 4ad3df29-d2a5-4afa-9668-3db13aa92a6a
+instance_service_name: neru-5c57b234-sfmc-bs-wa
+instance host address 1: https://api-ap.vonage.com/v1/neru/i/neru-5c57b234-sfmc-bs-wa/
+instance host address 2: https://neru-5c57b234-sfmc-bs-wa.apse1.serverless.vonage.com
+
+update config.json wabaID, apiKey, apiSecret
+
+MODIFICATIONS:
+inbound: https://api-ap.vonage.com/v1/neru/api/callbacks/?provider=vonage-messaging&action=message-callback&apiApplicationId=f763ae56-6837-48b6-8e1f-35052bc60830&apiAccountId=5c57b234
+status: https://api-ap.vonage.com/v1/neru/api/callbacks/?provider=vonage-messaging&action=message-status-callback&apiApplicationId=f763ae56-6837-48b6-8e1f-35052bc60830&apiAccountId=5c57b234

@@ -1,0 +1,9 @@
+neru configure:
+apiKey:
+4f2ff535
+
+apiSecret:
+jtYzPbh3MXr8M1Hr
+
+region:
+aws.use1

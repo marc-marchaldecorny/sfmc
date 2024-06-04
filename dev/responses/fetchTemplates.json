@@ -1,0 +1,285 @@
+{
+	"errorMessage": "",
+	"prev": null,
+	"data": [
+		{
+			"category": "MARKETING",
+			"template_name": "sfdcdemo4",
+			"templates": [
+				{
+					"category": "MARKETING",
+					"status": "APPROVED",
+					"product": null,
+					"language": "en",
+					"template_name": "sfdcdemo4",
+					"messageinfo": {
+						"wa_template_name": "sfdcdemo4",
+						"replace_params_key": [
+							{
+								"<custom_field_Name>": "text"
+							}
+						],
+						"wa_id": "226903269728345"
+					},
+					"template_id": "226903269728345",
+					"collection_id": "4586939248017408",
+					"id": "6716250474151936",
+					"rejected_reason": "NONE"
+				}
+			]
+		},
+		{
+			"category": "MARKETING",
+			"template_name": "pdftesting",
+			"templates": [
+				{
+					"category": "MARKETING",
+					"status": "APPROVED",
+					"product": null,
+					"language": "en",
+					"template_name": "pdftesting",
+					"messageinfo": {
+						"wa_template_name": "pdftesting",
+						"replace_params_key": [
+
+						],
+						"wa_id": "715784366998845"
+					},
+					"template_id": "715784366998845",
+					"collection_id": "5215019345903616",
+					"id": "5400968222736384",
+					"rejected_reason": null
+				}
+			]
+		},
+		{
+			"category": "MARKETING",
+			"template_name": "template_893",
+			"templates": [
+				{
+					"category": "MARKETING",
+					"status": "APPROVED",
+					"product": null,
+					"language": "en",
+					"template_name": "template_893",
+					"messageinfo": {
+						"wa_template_name": "template_893",
+						"replace_params_key": [
+
+						],
+						"wa_id": "1292183874699615"
+					},
+					"template_id": "1292183874699615",
+					"collection_id": "5325980629204992",
+					"id": "4659120275456000",
+					"rejected_reason": null
+				}
+			]
+		},
+		{
+			"category": "AUTHENTICATION",
+			"template_name": "template_875",
+			"templates": [
+				{
+					"category": "AUTHENTICATION",
+					"status": "APPROVED",
+					"product": null,
+					"language": "en",
+					"template_name": "template_875",
+					"messageinfo": {
+						"wa_template_name": "template_875",
+						"replace_params_key": [
+							{
+								"<custom_field_1>": "text"
+							}
+						],
+						"wa_id": "550478437211191"
+					},
+					"template_id": "550478437211191",
+					"collection_id": "5346896172417024",
+					"id": "6603992364875776",
+					"rejected_reason": "NONE"
+				}
+			]
+		},
+		{
+			"category": "MARKETING",
+			"template_name": "template_531",
+			"templates": [
+				{
+					"category": "MARKETING",
+					"status": "APPROVED",
+					"product": null,
+					"language": "en",
+					"template_name": "template_531",
+					"messageinfo": {
+						"wa_template_name": "template_531",
+						"replace_params_key": [
+
+						],
+						"wa_id": "6129714540443052"
+					},
+					"template_id": "6129714540443052",
+					"collection_id": "5486240262651904",
+					"id": "5376029640228864",
+					"rejected_reason": null
+				}
+			]
+		},
+		{
+			"category": "MARKETING",
+			"template_name": "template_508",
+			"templates": [
+				{
+					"category": "MARKETING",
+					"status": "APPROVED",
+					"product": null,
+					"language": "en",
+					"template_name": "template_508",
+					"messageinfo": {
+						"wa_template_name": "template_508",
+						"replace_params_key": [
+
+						],
+						"wa_id": "580115504070414"
+					},
+					"template_id": "580115504070414",
+					"collection_id": "5555525064458240",
+					"id": "4702419133005824",
+					"rejected_reason": null
+				}
+			]
+		},
+		{
+			"category": "MARKETING",
+			"template_name": "pdffilename",
+			"templates": [
+				{
+					"category": "MARKETING",
+					"status": "APPROVED",
+					"product": null,
+					"language": "en",
+					"template_name": "pdffilename",
+					"messageinfo": {
+						"wa_template_name": "pdffilename",
+						"replace_params_key": [
+
+						],
+						"wa_id": "5992341884186692"
+					},
+					"template_id": "5992341884186692",
+					"collection_id": "5841102365786112",
+					"id": "5557308945596416",
+					"rejected_reason": null
+				}
+			]
+		},
+		{
+			"category": "UTILITY",
+			"template_name": "template_904",
+			"templates": [
+				{
+					"category": "UTILITY",
+					"status": "REJECTED",
+					"product": null,
+					"language": "en",
+					"template_name": "template_904",
+					"messageinfo": {
+						"wa_template_name": "template_904",
+						"replace_params_key": [
+
+						],
+						"wa_id": "6446697532009606"
+					},
+					"template_id": "6446697532009606",
+					"collection_id": "6205225790734336",
+					"id": "4759064198381568",
+					"rejected_reason": "INCORRECT_CATEGORY"
+				}
+			]
+		},
+		{
+			"category": "MARKETING",
+			"template_name": "newaccounttest",
+			"templates": [
+
+			]
+		},
+		{
+			"category": "MARKETING",
+			"template_name": "imagesend",
+			"templates": [
+				{
+					"category": "MARKETING",
+					"status": "APPROVED",
+					"product": null,
+					"language": "en",
+					"template_name": "imagesend",
+					"messageinfo": {
+						"wa_template_name": "imagesend",
+						"replace_params_key": [
+
+						],
+						"wa_id": "623301606284255"
+					},
+					"template_id": "623301606284255",
+					"collection_id": "6490957918896128",
+					"id": "4947695722692608",
+					"rejected_reason": "NONE"
+				}
+			]
+		},
+		{
+			"category": "TRANSACTIONAL",
+			"template_name": "sfmcdemo3bot",
+			"templates": [
+				{
+					"category": "TRANSACTIONAL",
+					"status": "APPROVED",
+					"product": null,
+					"language": "en",
+					"template_name": "sfmcdemo3bot",
+					"messageinfo": {
+						"wa_template_name": "sfmcdemo3bot",
+						"replace_params_key": [
+							{
+								"<custom_field_Name>": "text"
+							}
+						],
+						"wa_id": "1253005938946123"
+					},
+					"template_id": "1253005938946123",
+					"collection_id": "6541735198720000",
+					"id": "5687849797812224",
+					"rejected_reason": null
+				}
+			]
+		},
+		{
+			"category": "UTILITY",
+			"template_name": "template_398",
+			"templates": [
+				{
+					"category": "UTILITY",
+					"status": "APPROVED",
+					"product": null,
+					"language": "en",
+					"template_name": "template_398",
+					"messageinfo": {
+						"wa_template_name": "template_398",
+						"replace_params_key": [
+
+						],
+						"wa_id": "610530003927882"
+					},
+					"template_id": "610530003927882",
+					"collection_id": "6606975420989440",
+					"id": "6206861569294336",
+					"rejected_reason": "NONE"
+				}
+			]
+		}
+	],
+	"success": true,
+	"next": null
+}

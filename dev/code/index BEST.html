@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('select')
+          .change(function () {
+            $(this)
+              .find('option:selected')
+              .each(function () {
+                var optionValue = $(this).attr('value');
+                if (optionValue) {
+                  $('.box')
+                    .not('.' + optionValue)
+                    .hide();
+                  $('.' + optionValue).show();
+                } else {
+                  $('.box').hide();
+                }
+              });
+          })
+          .change();
+      });
+    </script>
+    <title>Vonage WA activity</title>
+  </head>
+  <!-- BS: Center -->
+  <body class="custom-activity d-flex justify-content-center">
+    <!-- START STEP - BS Margin Top, Padding and Card. Color: bg-light text-white-->
+    <div
+      id="step1"
+      class="step container mt-4 card text-bg-light shadow p-3 mb-5 bg-body-tertiary rounded"
+    >
+      <!-- ROW 1: LOGO -->
+      <div class="row">
+        <!-- COLUMN -->
+        <div class="col">
+          <div class="p-3">
+            <img src="images/logo.png" alt="Vonage" />
+          </div>
+        </div>
+        <div class="col-10">
+          <div id="data-extension-warning" class="text-center">
+            <span
+              >Data extension not detected. Please configure the data extension
+              before configuring activity.</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- ROW 1: END -->
+      <!-- ROW 2: BODY -->
+      <div class="row">
+        <!-- COLUMN LEFT: 9 -->
+        <div class="col-9">
+          <div class="p-3 mb-1 card">
+            <!-- WABAID -->
+            <div class="row">
+              <div class="col-9">
+                <div class="box text">
+                  <form class="input-group mb-3 was-validated">
+                    <span class="input-group-text">WhatsApp Business ID:</span>
+                    <input
+                      class="form-control"
+                      aria-label="wabaId"
+                      id="wabaId"
+                      name="wabaId"
+                      value=""
+                      rows="1"
+                      required
+                    />
+                    <div class="invalid-feedback">Please enter WABA ID.</div>
+                  </form>
+                </div>
+              </div>
+              <div class="col">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="onClickGetTemplateList()"
+                >
+                  Get Template List
+                </button>
+              </div>
+            </div>
+            <!-- MESSAGE TYPE DROPDOWN -->
+            <div class="row">
+              <div class="col">
+                <form class="input-group mb-3">
+                  <span class="input-group-text">WhatsApp Message Type:</span>
+                  <select
+                    class="form-select"
+                    class="form-control"
+                    id="message-type"
+                    aria-label="message-type"
+                    value=""
+                    required
+                  >
+                    <option value="text">Text</option>
+                    <option value="template">Template</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+            <!-- TEXT BODY INPUT -->
+            <div class="row">
+              <div class="box text">
+                <form class="input-group mt-3 was-validated">
+                  <span class="input-group-text">Text Body:</span>
+                  <textarea
+                    class="form-control"
+                    aria-label="textMessage"
+                    id="textMessage"
+                    name="textMessage"
+                    value=""
+                    rows="1"
+                    required
+                  ></textarea>
+                  <div class="invalid-feedback">Please enter Text.</div>
+                </form>
+              </div>
+
+              <div class="box template">
+                <form class="input-group mt-3 was-validated">
+                  <span class="input-group-text">Template Name:</span>
+                  <textarea
+                    class="form-control"
+                    aria-label="Template"
+                    id="Template"
+                    name="Template"
+                    value=""
+                    rows="1"
+                    required
+                  ></textarea>
+                  <div class="invalid-feedback">
+                    Please enter Template Name.
+                  </div>
+                </form>
+                <form class="input-group mt-3 was-validated">
+                  <span class="input-group-text">Language:</span>
+                  <textarea
+                    class="form-control"
+                    aria-label="Language"
+                    id="Language"
+                    name="Language"
+                    value=""
+                    rows="1"
+                    required
+                  ></textarea>
+                  <div class="invalid-feedback">Please enter Language.</div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- COLUMN RIGHT-->
+        <div class="col">
+          <div class="p-3 mb-2 card">
+            <!-- DE FIELDS -->
+            <div class="placeholder-list">
+              <div class="card-header">Data Extension Fields</div>
+              <ul class="list-group list-group-flush">
+                <li id="placeholder-list" class="list-group-item"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END ROW 2 -->
+      <div class="card-footer mt-2">
+        Please fill all the required input fields. Then click Done.
+      </div>
+    </div>
+    <!-- END STEP END CARD-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        var dependencies = ['customActivity'];
+        require(dependencies);
+      })();
+    </script>
+
+    <script type="text/javascript">
+      const onClickGetTemplateList = async () => {
+        let wabaId = document.getElementById('wabaId').value;
+        await getTemplateList(wabaId);
+      };
+      const getTemplateList = async (wabaId) => {
+        // console.log('wabaId:', wabaId);
+        let wabaID = '432448094105434';
+        let apiKey = '4f2ff535';
+        let apiSecret = 'jtYzPbh3MXr8M1Hr';
+        var TOKEN = `${apiKey}:${apiSecret}`;
+        let data = { obj: TOKEN };
+        let requestOptions = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        };
+        fetch('/getWATemplateList', requestOptions)
+          .then((response) => response.json())
+          .then((result) => console.log('Success:', result))
+          .catch((error) => console.log('Error:', error));
+      };
+    </script>
+  </body>
+</html>

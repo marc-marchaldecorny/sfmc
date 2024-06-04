@@ -1,0 +1,12 @@
+{
+  "message_uuid": "88be7743-5053-49da-85a1-9eec017d722a",
+  "to": { "type": "sms", "number": "12013541564" },
+  "from": { "type": "sms", "number": "15754947093" },
+  "timestamp": "2022-12-20T22:31:04.199Z",
+  "usage": { "price": "0.0057", "currency": "EUR" },
+  "message": {
+    "content": { "type": "text", "text": "Hello back!" },
+    "sms": { "num_messages": "1" }
+  },
+  "direction": "inbound"
+}

@@ -1,0 +1,11 @@
+{
+  "to": "12013541564",
+  "from": "15754947093",
+  "channel": "sms",
+  "message_uuid": "4c2dde45-3948-4757-a9e1-1d30c07f5aa8",
+  "timestamp": "2022-12-20T22:32:05Z",
+  "usage": { "price": "0.0057", "currency": "EUR" },
+  "message_type": "text",
+  "text": "Hello v1",
+  "sms": { "num_messages": "1" }
+}

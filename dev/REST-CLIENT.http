@@ -1,0 +1,11 @@
+# TUTORIAL:
+# https://medium.com/refinitiv-developer-community/how-to-test-rest-api-with-visual-studio-code-rest-client-extensions-9f2e061d0299
+
+
+### Request
+# [GET|POST] [REST API URL] # Request Line
+# [Request Headers]
+# [Request Body]
+
+# Request 1:
+# GET https://swapi.dev/api/people/1/

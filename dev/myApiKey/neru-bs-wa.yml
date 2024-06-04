@@ -1,0 +1,29 @@
+project:
+  name: template-neru-messages
+instance:
+  name: bs-wa
+  runtime: nodejs16
+  region: aws.use1
+  application-id: 28c13487-1468-41a2-b2b5-429cf226d5b2
+  environment:
+    - name: VONAGE_NUMBER
+      value: '12013541564'
+      secret: ''
+    - name: WHATSAPP_NUMBER
+      value: '12015542422'
+      secret: ''
+    - name: TO_NUMBER
+      value: '15754947093'
+      secret: ''
+  capabilities:
+    - messaging
+    - voice
+  entrypoint:
+    - node
+    - index.js
+debug:
+  name: debug
+  entrypoint:
+    - nodemon
+    - --inspect
+    - index.js

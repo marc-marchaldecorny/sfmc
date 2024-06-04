@@ -1,0 +1,24 @@
+project:
+  name: template-neru-messages
+instance:
+  name: dev
+  runtime: nodejs16
+  region: aws.use1
+  application-id: YOUR_NERU_CREATE_APP_ID
+  environment:
+    - name: VONAGE_NUMBER
+      value: 'YOUR_LVN'
+    - name: TO_NUMBER
+      value: 'YOUR_NUMBER'
+  capabilities:
+    - messaging
+    - voice
+  entrypoint:
+    - node
+    - index.js
+debug:
+  name: debug
+  entrypoint:
+    - nodemon
+    - --inspect
+    - index.js

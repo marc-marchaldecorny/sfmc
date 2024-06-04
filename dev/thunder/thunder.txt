@@ -1,0 +1,60 @@
+neru configure:
+apiKey:
+06b3b9a7
+apiSecret:
+heGlht1XL2CCzGpn
+region:
+aws.euw1
+
+MMS number:
+12015911011
+
+NOTE BUG:
+What ever the applicationId region was that was set, then you must always use that region for every instance.
+
+I got error during `neru deploy` (I tried aws.use1, but had to use aws.euw1) and 
+also had to also do neru init.
+ ❌  deployment aborted: failed to deploy: error from deployment-api: credential not found: trace_id = 99132d58-0292-4093-95dd-e43b374a564f
+
+https://neru-06b3b9a7-backend-connector-v11-bs-mms.euw1.serverless.vonage.com
+https://neru-06b3b9a7-backend-connector-v11-bs-sms.euw1.serverless.vonage.com
+
+NOTE BUG:
+neru init does not always overright region in neru.yml. You need to set it to the desired region prior.
+
+NOTE BUG SFMC:
+If MMS number is not linked to Vonage Application, if failes Validation. 
+
+NOTE SFMC:
+I added 2 components to the same Package. SMS and MMS. I also updated config.json
+for applicationExtensionKey for each component.
+
+Thunder Image URL:
+https://info.thunderfunding.com/hubfs/beefree/Spanish%20Carrier/Thunder_Funding_Light_Grey_PNG_Final.png
+
+This is your id: {Id} and phone: {International_Phone__c}
+Your number is {International_Phone__c}
+
+Remove Instance:
+neru instance rm --project-name <project-name> --instance-name <instance-name>
+neru instance rm --project-name backend-connector-v11 --instance-name mms-one
+
+https://api-eu.vonage.com/v1/neru/i/neru-06b3b9a7-backend-connector-v11-mms-one/
+
+Package:
+VCR-MMS
+Description:
+Vonage Cloud Runtime MMS
+Components:
+Name: MMS
+
+Changed:
+from    "width": 1200
+to      "width": 1000
+
+Thunder Backend App Messages Settings:
+INBOUND URL
+https://api-eu.vonage.com/v1/neru/api/callbacks/?provider=vonage-messaging&action=message-callback&apiApplicationId=3e7cf45c-bfad-44f5-8093-136a4cd44428&apiAccountId=06b3b9a7
+
+STATUS URL
+https://api-eu.vonage.com/v1/neru/api/callbacks/?provider=vonage-messaging&action=message-status-callback&apiApplicationId=3e7cf45c-bfad-44f5-8093-136a4cd44428&apiAccountId=06b3b9a7
