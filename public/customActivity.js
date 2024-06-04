@@ -138,8 +138,8 @@ define(["postmonger"], function (Postmonger) {
     console.log("onSave() activityData.arguments:", activityData.arguments);
     activityData.name = "Vonage SMS"; // getActivityName();
     configureInArguments();
-    configureOutArguments();
-    configureOutArgumentsSchema();
+    //configureOutArguments();
+    //configureOutArgumentsSchema();
 
     activityData["metaData"].isConfigured = true;
     connection.trigger("updateActivity", activityData);
