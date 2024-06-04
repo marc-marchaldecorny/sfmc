@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vonage SMS Activity</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="custom-activity d-flex justify-content-center">
+    <div
+      id="step1"
+      class="step container mt-4 card text-bg-light shadow p-3 mb-5 bg-body-tertiary rounded"
+    >
+      <!-- Logo and Data Extension Warning -->
+      <div class="row">
+        <div class="col">
+          <div class="p-3">
+            <img src="images/logo.png" alt="Vonage" />
+          </div>
+        </div>
+        <div class="col-10">
+          <div id="data-extension-warning" class="text-center">
+            <span
+              >Data extension not detected. Please configure the data extension
+              before configuring the activity.</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Inputs -->
+      <div class="row">
+        <div class="col-9">
+          <div class="p-3 mb-1 card">
+            <!-- Sender ID Input -->
+            <div class="row">
+              <div class="col">
+                <form class="input-group mb-3 was-validated">
+                  <span class="input-group-text">Sender ID (From)</span>
+                  <textarea
+                    class="form-control"
+                    aria-label="Sender ID"
+                    id="senderID"
+                    name="senderID"
+                    rows="1"
+                    required
+                    disabled
+                  ></textarea>
+                  <div class="invalid-feedback">
+                    Please enter Sender ID (from).
+                  </div>
+                </form>
+              </div>
+              <!-- Recipient Phone Input -->
+              <div class="col">
+                <form class="input-group mb-3 was-validated">
+                  <span class="input-group-text">Recipient (To)</span>
+                  <select
+                    class="form-select"
+                    id="phone-parameter"
+                    aria-label="phone-parameter"
+                    required
+                  ></select>
+                  <div class="invalid-feedback">
+                    Please select Recipient Phone (to).
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- Text Body Input -->
+            <form class="input-group mb-3 was-validated">
+              <span class="input-group-text">Text Body</span>
+              <textarea
+                class="form-control"
+                aria-label="textMessage"
+                id="textMessage"
+                name="textMessage"
+                rows="4"
+                required
+              ></textarea>
+              <div class="invalid-feedback">
+                Please enter text to the message.
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Data Extension Fields -->
+        <div class="col">
+          <div class="p-3 mb-2 card">
+            <div class="placeholder-list">
+              <div class="card-header">Data Extension Fields</div>
+              <ul class="list-group list-group-flush">
+                <li id="placeholder-list" class="list-group-item"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Footer -->
+      <div class="card-footer mt-2">
+        Please fill all the required input fields. Then click Done.
+      </div>
+    </div>
+
+    <!-- JavaScript Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        var dependencies = ["customActivity"];
+        require(dependencies);
+      })();
+    </script>
+
+    <!-- Get environment variables from vcr.yml -->
+    <script>
+      let ENFORCE_SENDER_ID;
+      let VONAGE_SENDER;
+      fetch("/api/data")
+        .then((response) => response.json())
+        .then((data) => {
+          const { ENFORCE_SENDER_ID, VONAGE_SENDER } = data;
+
+          // Check if ENFORCE_SENDER_ID is true or false
+          const isEnforceSender = ENFORCE_SENDER_ID.toLowerCase() === "true";
+
+          // Update input field based on ENFORCE_SENDER_ID
+          const senderInput = document.getElementById("senderID");
+          senderInput.value = VONAGE_SENDER;
+          senderInput.disabled = isEnforceSender;
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    </script>
+  </body>
+</html>
