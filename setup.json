@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "type": "TEXT",
+      "title": "What language? If English US, then en-US",
+      "name": "LANGUAGE"
+    },
+    {
+      "type": "TEXT",
+      "title": "What is your SFMC Application Extension Key",
+      "name": "SFMC_APP_EXT_KEY"
+    },
+    {
+      "type": "TEXT",
+      "title": "Would you like to enforce Sender ID? True or False",
+      "name": "ENFORCE_SENDER_ID"
+    },
+    {
+      "type": "TEXT",
+      "title": "Vonage Sender",
+      "description": "If you are using a number, please make sure it is linked to your application and US 10DLC if applicable. If using a alphanumeric sender, please check with acct manager if registration is required.",
+      "features": ["VOICE", "SMS", "MMS"],
+      "name": "VONAGE_SENDER"
+    }
+  ]
+}

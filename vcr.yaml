@@ -1,0 +1,33 @@
+project:
+  name: sfmc-code-hub
+instance:
+  name: dev
+  runtime: nodejs16
+  region: aws.use1
+  application-id: f2ddaea7-9c65-45f7-9f4a-8bf2441bcf8b
+  configurations:
+    section1:
+      key1: this is an example
+    section2:
+      key2: 42
+  environment:
+    - name: LANGUAGE
+      value: "LANGUAGE"
+    - name: SFMC_APP_EXT_KEY
+      value: "SFMC_APP_EXT_KEY"
+    - name: ENFORCE_SENDER_ID
+      value: "True"
+    - name: VONAGE_SENDER
+      value: "VONAGE_SENDER"
+  capabilities:
+    - messaging
+    - voice
+  entrypoint:
+    - node
+    - index.js
+debug:
+  name: debug
+  entrypoint:
+    - nodemon
+    - --inspect
+    - index.js
