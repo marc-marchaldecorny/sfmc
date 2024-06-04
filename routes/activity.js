@@ -8,8 +8,10 @@ export const logExecuteData = [];
 const vonage = new Vonage({
   applicationId: process.env.API_APPLICATION_ID,
   privateKey: process.env.PRIVATE_KEY,
-  appendUserAgent: "sfmc"
-});
+  },
+  {
+  appendUserAgent: "sfmc-vcr"
+  });
 const queueName = `queue-${process.env.VCR_INSTANCE_SERVICE_NAME}`;
 const queue = new Queue(vcr.getGlobalSession());
 
