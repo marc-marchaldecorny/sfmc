@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Vonage SMS activity</title>
+
+    <style type="text/css">
+      body {
+        padding: 20px;
+        margin: 0;
+      }
+      .step {
+        display: none;
+      }
+      #step1 {
+        display: block;
+      }
+      .custom-activity {
+        font-family: 'Salesforce Sans', Arial, sans-serif;
+      }
+      .text-field {
+        margin-bottom: 2px;
+      }
+      .text-field label,
+      select {
+        display: inline-block;
+      }
+      .text-field label {
+        line-height: 1rem;
+      }
+      .text-field textarea,
+      input {
+        display: block;
+      }
+      .placeholder-list {
+        color: gray;
+      }
+      .input-form {
+        display: inline-block;
+      }
+      #sender-parameter-wrapper {
+        display: inline-block;
+      }
+      #send-test-sms-result-wrapper {
+        margin-top: 10px;
+      }
+      #counters-wrapper {
+        display: block;
+        float: right;
+        line-height: 2.5rem;
+        text-align: right;
+      }
+      #test-msisdn-input {
+        display: inline-block;
+        margin-left: 10px;
+      }
+      #send-test-sms-form {
+        display: block;
+        float: right;
+        text-align: center;
+      }
+      #send-test-sms-form fieldset {
+        padding-top: 15px;
+      }
+      #send-test-sms-button {
+        margin-top: 15px;
+      }
+      #data-extension-warning {
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: darksalmon;
+        text-align: center;
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="custom-activity">
+    <div id="step1" class="step">
+      <div id="data-extension-warning">
+        <span
+          >Data extension not detected. Please configure the data extension
+          before configuring activity.</span
+        >
+      </div>
+
+      <img src="images/logo.png" alt="Vonage" />
+      <h2>Send SMS:</h2>
+
+      <div>
+        Please Enter the content of the SMS using place holders and choose the
+        field that you want to use as phone number and click Done.
+      </div>
+
+      <div id="channel"></div>
+      <label for="sms" style="visibility: hidden">SMS</label>
+      <input
+        type="radio"
+        id="sms"
+        name="channel"
+        value="sms"
+        checked
+        style="visibility: hidden"
+      />
+
+      <div class="text-field" style="padding-bottom: 1.5%">
+        <div><label for="senderID">Sender ID:</label></div>
+        <textarea id="senderID" name="senderID" rows="3" cols="70"></textarea>
+      </div>
+
+      <div class="text-field">
+        <!-- <label for="message-template-input">Type in your text message.</label> -->
+        <div class="form-group" id="textMsg" style="padding-bottom: 1.5%">
+          <div><label for="textMessage">Text Body:</label></div>
+          <textarea
+            id="textMessage"
+            name="textMessage"
+            rows="3"
+            cols="90"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="text-field">
+        <label for="phone-parameter">Select phone to be sent message:</label>
+        <select id="phone-parameter"></select>
+        <!-- <select id="International_Phone__c"></select> -->
+      </div>
+
+      <div class="placeholder-list">
+        <span>Data Extension Fields:</span>
+        <ul id="placeholder-list"></ul>
+      </div>
+
+      <div class="input-form" style="visibility: hidden">
+        <div class="form-header">
+          <div class="text-field">
+            <label for="activity-name-input">Activity name</label>
+            <input
+              id="activity-name-input"
+              type="text"
+              size="80"
+              placeholder="Activity name"
+              disabled="disabled"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end step -->
+
+    <script>
+      let isChecked = (document.getElementById('channel').value = 'sms');
+      // console.log('isChecked:', isChecked);
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        var config = {
+          baseUrl: '',
+        };
+
+        var dependencies = ['customActivity'];
+
+        require(config, dependencies);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+
+INBOUND URL
+https://api-eu.vonage.com/v1/neru/api/callbacks/?provider=vonage-messaging&action=message-callback&apiApplicationId=3e7cf45c-bfad-44f5-8093-136a4cd44428&apiAccountId=06b3b9a7
+
+STATUS URL
+https://api-eu.vonage.com/v1/neru/api/callbacks/?provider=vonage-messaging&action=message-status-callback&apiApplicationId=3e7cf45c-bfad-44f5-8093-136a4cd44428&apiAccountId=06b3b9a7
