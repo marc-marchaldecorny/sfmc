@@ -8,6 +8,7 @@ export const logExecuteData = [];
 const vonage = new Vonage({
   applicationId: process.env.API_APPLICATION_ID,
   privateKey: process.env.PRIVATE_KEY,
+  appendUserAgent: "sfmc"
 });
 const queueName = `queue-${process.env.VCR_INSTANCE_SERVICE_NAME}`;
 const queue = new Queue(vcr.getGlobalSession());
@@ -71,7 +72,7 @@ async function createQueueIfNeeded() {
   if (!queueDetails) {
     await queue.createQueue(queueName, "sms", {
       maxInflight: 30,
-      msgPerSecond: 10,
+      msgPerSecond: 25,
       active: true,
     });
   } else {
@@ -161,6 +162,7 @@ export async function sms(req, res, next) {
         to: to.number,
         from: from.number,
         channel: "sms",
+                
       });
 
       console.log("✅ Sent message:", respMsg);
