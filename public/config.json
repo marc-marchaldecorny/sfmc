@@ -1,0 +1,65 @@
+{
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "images/icon.png",
+    "iconSmall": "images/iconSmall.png",
+    "category": "message"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "template-neru-messages",
+      "description": "Send Vonage Messages with Salesforce Marketing Cloud Journey Builder"
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [],
+      "outArguments": [],
+      "url": "https://neru-4f2ff535-template-neru-messages-bs-jumper.use1.serverless.vonage.com/execute"
+    }
+  },
+  "configurationArguments": {
+    "applicationExtensionKey": "82ff154e-b2ba-452b-84ea-367ac437836e",
+    "save": {
+      "url": "https://neru-4f2ff535-template-neru-messages-bs-jumper.use1.serverless.vonage.com/save"
+    },
+    "publish": {
+      "url": "https://neru-4f2ff535-template-neru-messages-bs-jumper.use1.serverless.vonage.com/publish"
+    },
+    "stop": {
+      "url": "https://neru-4f2ff535-template-neru-messages-bs-jumper.use1.serverless.vonage.com/stop"
+    },
+    "validate": {
+      "url": "https://neru-4f2ff535-template-neru-messages-bs-jumper.use1.serverless.vonage.com/validate"
+    }
+  },
+  "wizardSteps": [
+    {
+      "label": "Configuration",
+      "key": "step1"
+    }
+  ],
+  "userInterfaces": {
+    "configModal": {
+      "height": 900,
+      "width": 1200
+    }
+  },
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [
+          {
+            "textMessage": {
+              "dataType": "Text",
+              "isNullable": false,
+              "direction": "out"
+            }
+          }
+        ],
+        "outArguments": []
+      }
+    }
+  }
+}
