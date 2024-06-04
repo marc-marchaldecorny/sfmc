@@ -1,0 +1,73 @@
+{
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "images/icon.png",
+    "iconSmall": "images/iconSmall.png",
+    "category": "message"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "MMS",
+      "description": "Send Vonage Messages with Salesforce Marketing Cloud Journey Builder"
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [],
+      "outArguments": [],
+      "url": "https://neru-06b3b9a7-backend-connector-v11-mms-one.euw1.serverless.vonage.com/execute"
+    }
+  },
+  "configurationArguments": {
+    "applicationExtensionKey": "8bd8617c-6583-40ac-8260-92d0d6892dc5",
+    "save": {
+      "url": "https://neru-06b3b9a7-backend-connector-v11-mms-one.euw1.serverless.vonage.com/save"
+    },
+    "publish": {
+      "url": "https://neru-06b3b9a7-backend-connector-v11-mms-one.euw1.serverless.vonage.com/publish"
+    },
+    "stop": {
+      "url": "https://neru-06b3b9a7-backend-connector-v11-mms-one.euw1.serverless.vonage.com/stop"
+    },
+    "validate": {
+      "url": "https://neru-06b3b9a7-backend-connector-v11-mms-one.euw1.serverless.vonage.com/validate"
+    }
+  },
+  "wizardSteps": [
+    {
+      "label": "Configuration",
+      "key": "step1"
+    }
+  ],
+  "userInterfaces": {
+    "configModal": {
+      "height": 650,
+      "width": 650,
+      "fullscreen": true
+    }
+  },
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [
+          {
+            "imageUrl": {
+              "dataType": "Text",
+              "isNullable": false,
+              "direction": "out"
+            }
+          },
+          {
+            "imageCaption": {
+              "dataType": "Text",
+              "isNullable": false,
+              "direction": "out"
+            }
+          }
+        ],
+        "outArguments": []
+      }
+    }
+  }
+}
