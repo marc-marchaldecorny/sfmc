@@ -158,7 +158,7 @@ export async function sms(req, res, next) {
       const to = { type: "sms", number: phone };
 
       let respMsg = await vonage.messages.send({
-        client_ref: req.body.journeyId,
+        client_ref: "sfmc:" + req.body.journeyId,
         text: textMessage,
         messageType: "text",
         to: to.number,
